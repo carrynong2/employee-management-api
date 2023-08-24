@@ -34,7 +34,6 @@ public class Employee {
     }
 
     // define getter/setter
-
     public int getId() {
         return id;
     }

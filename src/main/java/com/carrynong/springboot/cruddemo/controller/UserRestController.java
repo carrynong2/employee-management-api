@@ -18,7 +18,6 @@ public class UserRestController {
 
     @PostMapping("/users")
     public User addUser(@RequestBody User theUser) {
-
         // also just in case they pass an id in JSON ... set id to 0
         // this is to force a save of new item ... instead of update
 
@@ -29,11 +28,9 @@ public class UserRestController {
 
     @DeleteMapping("/users/{userId}")
     public String deleteUser(@PathVariable int userId) {
-
         User tempUser = userService.findById(userId);
 
         // throw exception if null
-
         if (tempUser == null) {
             throw new RuntimeException("Employee id not found - " + userId);
         }

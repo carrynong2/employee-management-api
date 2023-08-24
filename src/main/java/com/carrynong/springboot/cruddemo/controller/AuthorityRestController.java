@@ -17,13 +17,8 @@ public class AuthorityRestController {
     }
 
     // add mapping for POST /employees - add new employee
-
     @PostMapping("/authorities")
     public Authority addAuthority(@RequestBody Authority theAuthority) {
-
-        // also just in case they pass an id in JSON ... set id to 0
-        // this is to force a save of new item ... instead of update
-
         Authority dbAuthority = authorityService.save(theAuthority);
 
         return dbAuthority;
